@@ -7,6 +7,7 @@ export const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	background: #010606;
+	padding-bottom: 64px;
 
 	/* @media screen and (max-width: 768px) {
 		height: 1100px;
@@ -18,6 +19,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
 	display: grid;
 	z-index: 1;
+
 	/* height: 860px; */
 
 	max-width: 1000px;

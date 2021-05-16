@@ -2,6 +2,7 @@ import DollaNavbar from '../components/molecules/DollaNavbar';
 import HeroSection from '../components/molecules/DollaHeroSection';
 import DollaInfoSection from '../components/molecules/DollaInfoSection';
 import DollaServicesSection from '../components/molecules/DollaServicesSection';
+import DollaFooter from '../components/molecules/DollaFooter';
 import { homeObjOne, homeObjTwo, homeObjThree, ServicesCardsContent } from '../assets/Data';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
 			<DollaInfoSection {...homeObjTwo} />
 			<DollaInfoSection {...homeObjThree} />
 			<DollaServicesSection {...ServicesCardsContent} />
+			<DollaFooter />
 		</div>
 	);
 }
