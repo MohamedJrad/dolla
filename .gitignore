@@ -1,1 +1,33 @@
-node_modules
+
+
+# node.js
+#
+node_modules/
+package-lock.json
+npm-debug.log
+yarn-error.log
+yarn.lock
+# OSX
+#
+.DS_Store
+
+.next/
+
+#amplify
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/mock-data
+amplify/backend/amplify-meta.json
+amplify/backend/awscloudformation
+build/
+dist/
+node_modules/
+aws-exports.js
+awsconfiguration.json
+amplifyconfiguration.json
+amplify-build-config.json
+amplify-gradle-config.json
+amplifytools.xcconfig
+ 
+ out/
+ amplify/

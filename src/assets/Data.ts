@@ -1,6 +1,11 @@
-import Icon from './images/SVGCAR';
-import SavingIllu from './images/SavingIllu';
-import WalletIllu from './images/WalletIllu';
+import Icon from './SVGComponents/SVGCAR';
+import SVGCAR from './SVGComponents/SVGCAR';
+import SavingIllu from './SVGComponents/SavingIllu';
+import WalletIllu from './SVGComponents/WalletIllu';
+import Remote from './SVGComponents/RemoteSVG';
+import Personal from './SVGComponents/PersonalSVG';
+import Discount from './SVGComponents/DiscountSVG';
+
 export const homeObjOne = {
 	id: 'about',
 	lightBg: false,
@@ -50,3 +55,17 @@ export const homeObjThree = {
 	dark: true,
 	primary: true
 };
+
+export const ServicesCardsContent = [
+	{
+		title: 'Reduce Expenses',
+		description: 'We help reduce your fees and increase your overall revenue.',
+		img: Discount
+	},
+	{ title: 'Virtual Offices', description: 'You can access our platform online anywhere in the world', img: Remote },
+	{
+		title: 'Premium Benefits',
+		description: 'Unlock our special membership card that return 5% cash back',
+		img: Personal
+	}
+];
