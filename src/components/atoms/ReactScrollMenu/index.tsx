@@ -1,89 +1,83 @@
-import React from 'react';
-import { Link } from 'react-scroll';
-import { Container, Item, Name } from './styles';
+import React, { useState, useEffect } from 'react';
+import NavbarContainer from '../../atoms/NavbarContainer';
+import NavbarLogo from '../../atoms/DollaLogo';
+import SimpleBurgerMenuIcon from '../../atoms/SimpleBurgerMenuIcon';
+import ReactScrollMenu from '../../atoms/ReactScrollMenu';
+import NavBtn from '../../atoms/DollaBtn';
+import SidebarContainer from '../../atoms/SidebarContainer';
+import { default as NextLink } from 'next/link';
 
-type Section = {
-	id: string;
-	name: string;
-	iconUrl: string;
-};
-type ScrollSetting = {
-	spy?: boolean;
-	smooth?: boolean;
-	hashSpy?: boolean;
-	offset?: number;
-	duration?: number;
-	delay?: number;
-	isDynamic?: boolean;
-	onSetActive?: any;
-	onSetInactive?: any;
-	ignoreCancelEvents?: boolean;
-};
-interface Props {
-	sections: Section[];
-	itemBg: string;
-	bg: string;
-	size: string;
-	itemColor: string;
-	direction: 'horizontal' | 'vertical';
-	MobileOnly?: boolean;
-	DesktopOnly?: boolean;
-	scrollSetting: ScrollSetting;
-}
-const ReactScrollMenu = ({
-	scrollSetting,
-	direction,
-	sections,
-	itemBg,
-	bg,
-	size,
-	itemColor,
-	MobileOnly,
-	DesktopOnly
-}: Props) => {
+const DollaNavbar = () => {
+	const sections = [
+		{ id: 'about', name: 'About', iconUrl: '' },
+		{ id: 'discover', name: 'Discover', iconUrl: '' },
+		{ id: 'services', name: 'Services', iconUrl: '' },
+		{ id: 'signup', name: 'Sign Up', iconUrl: '' }
+	];
+
+	const closeSideBar = () => {
+		setSidebarState(false);
+	};
+	const scrollSetting = {
+		spy: true,
+		smooth: true,
+		offset: -60,
+		duration: 500,
+		onSetActive: closeSideBar
+	};
+	const [ sidebarState, setSidebarState ] = useState(false);
+	const burgerClicked = () => {
+		setSidebarState(true);
+	};
+
+	// const [ bg, setBg ] = useState('#0d0d0d');
+
+	// const changeNav = () => {
+	// 	if (window.scrollY >= 80) {
+	// 		//setScrollNav(true);
+
+	// 		setBg('#0d0d0d');
+	// 	} else {
+	// 		//setScrollNav(false);
+
+	// 		setBg('transparent');
+	// 	}
+	// };
+
+	// useEffect(() => {
+	// 	window.addEventListener('scroll', changeNav);
+	// }, []);
+
 	return (
-		<Container id="menuNavbar" bg={bg} direction={direction} MobileOnly={MobileOnly} DesktopOnly={DesktopOnly}>
-			{sections.map((section) => {
-				return (
-					<div key={section.id}>
-						<Link
-							activeClass="active"
-							to={section.id}
-							spy={scrollSetting.spy}
-							smooth={scrollSetting.smooth}
-							offset={scrollSetting.offset}
-							duration={scrollSetting.duration}
-							onSetActive={() => {
-								scrollSetting.onSetActive();
-							}}
-						>
-							<Item bg={itemBg} size={size}>
-								{/* <Icon className="h-6 w-6 mr-2" src={section.iconUrl} /> */}
-								<Name itemColor={itemColor}>{section.name}</Name>
-							</Item>
-						</Link>
-					</div>
-				);
-			})}
-		</Container>
+		<NavbarContainer bg={'#0d0d0d'}>
+			<NextLink href="/">
+				<NavbarLogo bg={'#0d0d0d'} color="#fff" />
+			</NextLink>
+			<SimpleBurgerMenuIcon color="#fff" onClick={burgerClicked} />
+			<ReactScrollMenu
+				sections={sections}
+				bg={'#0d0d0d'}
+				itemBg={'#0d0d0d'}
+				direction="horizontal"
+				DesktopOnly={true}
+				scrollSetting={scrollSetting}
+			/>
+
+			<NavBtn label="Sign In" DesktopOnly={true} color="#fff" />
+
+			<SidebarContainer isOpen={sidebarState} setIsOpen={setSidebarState}>
+				<ReactScrollMenu
+					scrollSetting={scrollSetting}
+					sections={sections}
+					bg="#0d0d0d"
+					itemBg="#0d0d0d"
+					direction="vertical"
+				/>
+				<div style={{ height: '50px', width: '50px' }}> </div>
+				<NavBtn label="Sign In" color="#fff" />
+			</SidebarContainer>
+		</NavbarContainer>
 	);
 };
 
-ReactScrollMenu.defaultProps = {
-	sections: [
-		{ id: '1', name: 'section1', iconUrl: '' },
-		{ id: '2', name: 'section2', iconUrl: '' },
-		{ id: '3', name: 'section3', iconUrl: '' },
-		{ id: '4', name: 'section4', iconUrl: '' }
-		// { id: 5, name: 'section5', iconUrl: '' },
-		// { id: 6, name: 'section6', iconUrl: '' },
-		// { id: 7, name: 'section7', iconUrl: '' },
-		// { id: 8, name: 'section8', iconUrl: '' },
-	],
-	size: '20px',
-	itemBg: 'red',
-	bg: 'yellow',
-	itemColor: '#fff',
-	direction: 'horizontal'
-};
-export default ReactScrollMenu;
+export default DollaNavbar;
