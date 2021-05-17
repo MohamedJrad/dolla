@@ -30,6 +30,14 @@ interface Props {
 	DesktopOnly?: boolean;
 	scrollSetting: ScrollSetting;
 }
+
+const scrollSetting = {
+	spy: true,
+	smooth: true,
+	offset: -60,
+	duration: 500,
+	onSetActive: () => {}
+};
 const ReactScrollMenu = ({
 	scrollSetting,
 	direction,
@@ -84,6 +92,7 @@ ReactScrollMenu.defaultProps = {
 	itemBg: 'red',
 	bg: 'yellow',
 	itemColor: '#fff',
-	direction: 'horizontal'
+	direction: 'horizontal',
+	scrollSetting: scrollSetting
 };
 export default ReactScrollMenu;
