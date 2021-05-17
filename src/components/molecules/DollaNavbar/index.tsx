@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import NavbarContainer from '../../atoms/NavbarContainer';
-import NavbarLogo from '../../atoms/NavbarLogo';
+import NavbarLogo from '../../atoms/DollaLogo';
 import SimpleBurgerMenuIcon from '../../atoms/SimpleBurgerMenuIcon';
 import ReactScrollMenu from '../../atoms/ReactScrollMenu';
 import NavBtn from '../../atoms/DollaBtn';

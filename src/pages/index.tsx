@@ -4,6 +4,7 @@ import DollaInfoSection from '../components/molecules/DollaInfoSection';
 import DollaServicesSection from '../components/molecules/DollaServicesSection';
 import DollaFooter from '../components/molecules/DollaFooter';
 import { homeObjOne, homeObjTwo, homeObjThree, ServicesCardsContent } from '../assets/Data';
+import DollaWebsiteRights from '../components/molecules/DollaWebsiteRights';
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<DollaInfoSection {...homeObjThree} />
 			<DollaServicesSection {...ServicesCardsContent} />
 			<DollaFooter />
+			<DollaWebsiteRights />
 		</div>
 	);
 }

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
-	align-items: center;
+	align-items: flex-start;
 	max-width: 1100px;
 	margin: 0 auto;
 `;
