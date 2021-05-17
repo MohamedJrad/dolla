@@ -10,7 +10,8 @@ export default function Home() {
 	return (
 		<div>
 			<DollaNavbar />
-			<HeroSection /> <DollaInfoSection {...homeObjOne} />
+			<HeroSection />
+			<DollaInfoSection {...homeObjOne} />
 			<DollaInfoSection {...homeObjTwo} />
 			<DollaInfoSection {...homeObjThree} />
 			<DollaServicesSection {...ServicesCardsContent} />

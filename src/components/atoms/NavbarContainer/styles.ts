@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const Nav = styled.nav<{ bg: string }>`
+export const Nav =
+	styled.nav <
+	{ bg: string } >
+	`
   background-color: ${(props) => props.bg};
   display: flex;
   justify-content: center;
@@ -15,13 +18,13 @@ export const Nav = styled.nav<{ bg: string }>`
 `;
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-  width: 100%;
-  padding: 0 24px;
-  max-width: 1100px;
-  margin-left:20px;
-  margin-right:20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 64px;
+	width: 100%;
+	padding: 0 24px;
+	max-width: 1100px;
+	margin-left: 20px;
+	margin-right: 20px;
 `;

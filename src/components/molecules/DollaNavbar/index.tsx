@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavbarContainer from '../../atoms/NavbarContainer';
 import NavbarLogo from '../../atoms/DollaLogo';
 import SimpleBurgerMenuIcon from '../../atoms/SimpleBurgerMenuIcon';
@@ -18,7 +18,6 @@ const DollaNavbar = () => {
 	const closeSideBar = () => {
 		setSidebarState(false);
 	};
-
 	const scrollSetting = {
 		spy: true,
 		smooth: true,
@@ -31,16 +30,34 @@ const DollaNavbar = () => {
 		setSidebarState(true);
 	};
 
+	// const [ bg, setBg ] = useState('#0d0d0d');
+
+	// const changeNav = () => {
+	// 	if (window.scrollY >= 80) {
+	// 		//setScrollNav(true);
+
+	// 		setBg('#0d0d0d');
+	// 	} else {
+	// 		//setScrollNav(false);
+
+	// 		setBg('transparent');
+	// 	}
+	// };
+
+	// useEffect(() => {
+	// 	window.addEventListener('scroll', changeNav);
+	// }, []);
+
 	return (
-		<NavbarContainer bg="#0d0d0d">
+		<NavbarContainer bg={'#0d0d0d'}>
 			<NextLink href="/">
-				<NavbarLogo bg="#0d0d0d" color="#fff" />
+				<NavbarLogo bg={'#0d0d0d'} color="#fff" />
 			</NextLink>
 			<SimpleBurgerMenuIcon color="#fff" onClick={burgerClicked} />
 			<ReactScrollMenu
 				sections={sections}
-				bg="#0d0d0d"
-				itemBg="#0d0d0d"
+				bg={'#0d0d0d'}
+				itemBg={'#0d0d0d'}
 				direction="horizontal"
 				DesktopOnly={true}
 				scrollSetting={scrollSetting}

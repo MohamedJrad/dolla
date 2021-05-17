@@ -12,6 +12,7 @@ yarn.lock
 .DS_Store
 
 .next/
+.next
 
 #amplify
 amplify/\#current-cloud-backend
